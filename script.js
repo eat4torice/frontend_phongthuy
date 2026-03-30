@@ -14,6 +14,74 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Mobile navbar toggle (hamburger)
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        const navContainer = navbar.querySelector('.nav-container');
+        const navMenu = navbar.querySelector('.nav-menu');
+
+        if (navContainer && navMenu) {
+            let toggleBtn = navContainer.querySelector('.navbar-toggle');
+            if (!toggleBtn) {
+                toggleBtn = document.createElement('button');
+                toggleBtn.type = 'button';
+                toggleBtn.className = 'navbar-toggle';
+                toggleBtn.setAttribute('aria-label', 'Mở menu điều hướng');
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                toggleBtn.innerHTML = '<i class="fas fa-bars"></i> Menu';
+                navContainer.insertBefore(toggleBtn, navMenu);
+            }
+
+            const closeMobileMenu = function () {
+                navbar.classList.remove('nav-open');
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                navbar.querySelectorAll('.nav-item.dropdown.open').forEach(function (item) {
+                    item.classList.remove('open');
+                });
+            };
+
+            toggleBtn.addEventListener('click', function () {
+                const isOpen = navbar.classList.toggle('nav-open');
+                toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            navbar.querySelectorAll('.nav-item.dropdown > a').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth > 1100) {
+                        return;
+                    }
+                    e.preventDefault();
+                    const item = link.closest('.nav-item.dropdown');
+                    if (!item) {
+                        return;
+                    }
+                    const willOpen = !item.classList.contains('open');
+                    navbar.querySelectorAll('.nav-item.dropdown.open').forEach(function (opened) {
+                        opened.classList.remove('open');
+                    });
+                    if (willOpen) {
+                        item.classList.add('open');
+                    }
+                });
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 1100) {
+                    closeMobileMenu();
+                }
+            });
+
+            document.addEventListener('click', function (e) {
+                if (window.innerWidth > 1100) {
+                    return;
+                }
+                if (!navbar.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            });
+        }
+    }
+
     // Handle comment form submissions
     const commentForms = document.querySelectorAll('.comment-form');
     commentForms.forEach(form => {
