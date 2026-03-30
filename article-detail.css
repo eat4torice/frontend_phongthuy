@@ -554,12 +554,12 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: white;
+    color: var(--primary-red);
     text-decoration: none;
     font-weight: 700;
     padding: 0.75rem 1.15rem;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    background-color: rgba(255, 255, 255, 0.18);
+    border: 1px solid #f6d75f;
+    background-color: var(--primary-gold);
     border-radius: 8px;
     transition: all 0.3s ease;
 }
@@ -567,23 +567,26 @@
 .category-preview-card a i {
     width: 28px;
     height: 28px;
+    margin-bottom: 0;
+    font-size: 0.95rem;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--primary-red);
+    background-color: var(--primary-red);
+    color: #fff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
 .category-preview-card a:hover {
-    background-color: var(--primary-gold);
+    background-color: #fff;
     color: var(--primary-red);
-    border-color: var(--primary-gold);
+    border-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
 }
 
 .category-preview-card a:hover i {
     background-color: var(--primary-red);
-    color: var(--primary-gold);
+    color: #fff;
 }
 
 /* Article Sidebar */
