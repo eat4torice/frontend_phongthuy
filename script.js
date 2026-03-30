@@ -2,15 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     // Fallback image when external image URL fails to load
-    const fallbackSrc = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-        '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">' +
-        '<rect width="640" height="360" fill="#f1f1f1"/>' +
-        '<rect x="190" y="90" width="260" height="180" rx="10" fill="#e4e4e4" stroke="#cccccc"/>' +
-        '<circle cx="265" cy="150" r="16" fill="#c8c8c8"/>' +
-        '<path d="M230 235l65-60 45 40 35-28 35 48z" fill="#cfcfcf"/>' +
-        '<text x="320" y="305" text-anchor="middle" font-family="Segoe UI, Arial" font-size="22" fill="#8a8a8a">noimage.jpg</text>' +
-        '</svg>'
-    );
+    const fallbackSrc = 'https://picsum.photos/seed/phongthuy-fallback/1200/800';
 
     document.querySelectorAll('img').forEach(function (img) {
         img.addEventListener('error', function () {

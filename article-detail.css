@@ -594,6 +594,24 @@
     height: fit-content;
     position: sticky;
     top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 0.25rem;
+}
+
+.article-sidebar::-webkit-scrollbar {
+    width: 7px;
+}
+
+.article-sidebar::-webkit-scrollbar-thumb {
+    background-color: #d4bea0;
+    border-radius: 999px;
+}
+
+.article-sidebar::-webkit-scrollbar-track {
+    background-color: #f3ebdf;
+    border-radius: 999px;
 }
 
 .sidebar-widget {
@@ -748,6 +766,8 @@
 
     .article-sidebar {
         position: static;
+        max-height: 62vh;
+        overflow-y: auto;
     }
 
     .table-of-contents {
