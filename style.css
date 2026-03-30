@@ -279,6 +279,7 @@ body {
     background-color: var(--white);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    grid-column: 1;
 }
 
 .group-title {
@@ -475,6 +476,8 @@ footer {
     height: fit-content;
     position: sticky;
     top: 20px;
+    grid-column: 2;
+    grid-row: 1 / -1;
 }
 
 .sidebar-widget {
