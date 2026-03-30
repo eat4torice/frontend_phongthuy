@@ -190,9 +190,7 @@ body {
 }
 
 .content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 2rem;
+    display: block;
 }
 
 .content-wrapper.full-width {
