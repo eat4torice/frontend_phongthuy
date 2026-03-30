@@ -53,6 +53,11 @@ body {
     margin: 0;
 }
 
+.brand h1 i,
+.brand p i {
+    margin-right: 0.35rem;
+}
+
 .brand p {
     color: var(--text-light);
     font-size: 0.8rem;
@@ -175,12 +180,26 @@ body {
 }
 
 .nav-item>a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    white-space: nowrap;
     color: white;
     text-decoration: none;
     padding: 1rem 1.5rem;
     font-weight: 500;
     transition: background-color 0.3s;
+}
+
+.nav-item>a i {
+    margin-right: 0;
+}
+
+.nav-item.dropdown>a::after {
+    content: "▾";
+    font-size: 0.8rem;
+    line-height: 1;
 }
 
 .nav-item>a:hover {
@@ -214,6 +233,12 @@ body {
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     transition: all 0.3s;
+}
+
+.dropdown-menu a i {
+    width: 1rem;
+    margin-right: 0.4rem;
+    color: var(--secondary-brown);
 }
 
 .dropdown-menu a:hover {
@@ -461,6 +486,11 @@ footer {
 .footer-section p {
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-section p i,
+.footer-bottom p i {
+    margin-right: 0.35rem;
 }
 
 .footer-section a {
