@@ -67,25 +67,42 @@ body {
 
 .search-bar {
     display: flex;
-    background-color: var(--bg-light);
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 0.25rem 0.6rem;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    gap: 0;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .search-bar input {
     border: none;
-    background: none;
+    background-color: #f5f5f5;
     outline: none;
-    width: 120px;
-    font-size: 11px;
+    padding: 0.6rem 1rem;
+    width: 280px;
+    font-size: 13px;
+    border-radius: 6px 0 0 6px;
+    color: #333;
+}
+
+.search-bar input::placeholder {
+    color: #999;
 }
 
 .search-bar button {
     border: none;
-    background: none;
+    background-color: #ff6633;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    color: white;
+    border-radius: 0 6px 6px 0;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #ff5511;
 }
 
 .cart-icon {
