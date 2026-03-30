@@ -25,7 +25,9 @@
             <div class="header-actions">
                 <div class="search-bar">
                     <input type="search" placeholder="Tìm kiếm...">
-                    <button>🔍</button>
+                    <button type="submit" aria-label="Tìm kiếm">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -221,58 +223,54 @@
 
             <!-- Sidebar: Công Cụ Cũ -->
             <aside class="sidebar">
-                <div class="sidebar-widget">
-                    <h3><i class="fas fa-tools"></i> Công Cụ Cũ Phong Thủy</h3>
-                    <p class="sidebar-description">Khám phá bộ sưu tập công cụ cũ xưa có giá trị phong thủy và lịch sử
-                        cao.</p>
-                    <div class="sidebar-product-list">
-                        <a href="#" class="sidebar-item">
-                            <i class="fas fa-hammer"></i> Búa Đồng Cổ
-                        </a>
-                        <a href="#" class="sidebar-item">
-                            <i class="fas fa-ruler"></i> Thước Gỗ Xưa
-                        </a>
-                        <a href="#" class="sidebar-item">
-                            <i class="fas fa-screwdriver"></i> Tuốc Nơ Vít Cổ
-                        </a>
-                        <a href="#" class="sidebar-item">
-                            <i class="fas fa-lock"></i> Khóa Cũ Đồng
-                        </a>
-                        <a href="#" class="sidebar-item">
-                            <i class="fas fa-key"></i> Chìa Khóa Xưa
-                        </a>
-                        <a href="#" class="sidebar-item">
-                            <i class="fas fa-oil-can"></i> Bình Dầu Cổ
-                        </a>
-                    </div>
-                </div>
+                <nav class="tool-nav" aria-label="Danh mục phong thủy">
+                    <section class="tool-menu">
+                        <h3 class="tool-menu-title"><i class="fas fa-bars"></i> ĐÁ PHONG THỦY</h3>
+                        <ul class="tool-menu-list">
+                            <li><a href="#"><i class="fas fa-square"></i> Vật phẩm phong thủy đá</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Linh vật đá</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Quả cầu phong thủy</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Bộ quý trọng sắc phong thủy</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Tỳ hưu phong thủy</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Thạch trấn đá</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Vòng phong thủy</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Phật bản mệnh</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Tượng Di Lặc đá</a></li>
+                        </ul>
+                    </section>
 
-                <div class="sidebar-widget">
-                    <h3><i class="fas fa-lightbulb"></i> Lời Khuyên Phong Thủy</h3>
-                    <div class="tips-list">
-                        <div class="tip-item">
-                            <i class="fas fa-door-open"></i>
-                            <div>
-                                <h4>Cửa Chính</h4>
-                                <p>Đặt đá hoặc gỗ phong thủy ở hai bên cửa chính để hút lộc và bảo vệ gia đình.</p>
-                            </div>
-                        </div>
-                        <div class="tip-item">
-                            <i class="fas fa-home"></i>
-                            <div>
-                                <h4>Phòng Ngủ</h4>
-                                <p>Tránh bề mặt gương đối diện giường, nên đặt đồ xưa có năng lượng tích cực.</p>
-                            </div>
-                        </div>
-                        <div class="tip-item">
-                            <i class="fas fa-laptop"></i>
-                            <div>
-                                <h4>Bàn Làm Việc</h4>
-                                <p>Để gỗ phong thủy hoặc đá tím trên bàn để tăng tập trung và năng suất công việc.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <section class="tool-menu">
+                        <h3 class="tool-menu-title"><i class="fas fa-bars"></i> GỖ PHONG THỦY</h3>
+                        <ul class="tool-menu-list">
+                            <li><a href="#"><i class="fas fa-square"></i> Vật phẩm phong thủy gỗ</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Linh vật gỗ</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Đèn - kệ</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Tượng Quan Âm gỗ</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Tượng Di Lặc gỗ</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Tượng gỗ khác</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Bộ tượng sắc vòng dây</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Tranh - phù điêu</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Đồ mỹ nghệ</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="tool-menu">
+                        <h3 class="tool-menu-title"><i class="fas fa-bars"></i> ĐỒ XƯA</h3>
+                        <ul class="tool-menu-list">
+                            <li><a href="#"><i class="fas fa-square"></i> Bùa lá</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Gốm sứ</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Tranh ảnh</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Đồng hồ</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Trống</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Máy hát</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Bộ chân nến</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Bộ đồ đồng</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Đèn</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Đồ gia dụng</a></li>
+                            <li><a href="#"><i class="fas fa-square"></i> Đồ gỗ</a></li>
+                        </ul>
+                    </section>
+                </nav>
             </aside>
         </div>
     </main>
