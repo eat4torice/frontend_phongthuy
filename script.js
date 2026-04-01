@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     // Fallback image when external image URL fails to load
-    const fallbackSrc = 'https://picsum.photos/seed/phongthuy-fallback/1200/800';
+    const fallbackSrc = 'noimage.jpg';
 
     document.querySelectorAll('img').forEach(function (img) {
         img.addEventListener('error', function () {
@@ -19,6 +19,27 @@ document.addEventListener('DOMContentLoaded', function () {
     if (navbar) {
         const navContainer = navbar.querySelector('.nav-container');
         const navMenu = navbar.querySelector('.nav-menu');
+
+        // Desktop hover intent: keep dropdown open briefly while moving cursor to submenu.
+        if (window.matchMedia('(min-width: 1101px)').matches) {
+            const hoverTimers = new WeakMap();
+            navbar.querySelectorAll('.nav-item.dropdown').forEach(function (item) {
+                item.addEventListener('mouseenter', function () {
+                    const timer = hoverTimers.get(item);
+                    if (timer) {
+                        clearTimeout(timer);
+                    }
+                    item.classList.add('hover-open');
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    const timer = setTimeout(function () {
+                        item.classList.remove('hover-open');
+                    }, 220);
+                    hoverTimers.set(item, timer);
+                });
+            });
+        }
 
         if (navContainer && navMenu) {
             let toggleBtn = navContainer.querySelector('.navbar-toggle');
