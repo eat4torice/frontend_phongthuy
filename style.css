@@ -334,10 +334,10 @@ body {
 }
 
 .dropdown-menu a::before {
-    content: ">";
+    content: "☾";
     color: #b79563;
     margin-right: 0.5rem;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
 }
 
 .dropdown-menu a:hover {
@@ -438,7 +438,7 @@ body {
 
 /* Product Groups - ĐÁ, GỖ, ĐỒ XƯA */
 .product-group {
-    margin: 3rem 0;
+    margin: 1.5rem 0;
     padding: 2rem;
     background-color: var(--white);
     border-radius: 12px;
