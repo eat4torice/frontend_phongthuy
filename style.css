@@ -95,7 +95,7 @@ body {
     padding: 0 0 0 0.55rem;
     align-items: center;
     width: 360px;
-    height: 42px;
+    height: 36px;
     border-radius: 6px;
     box-sizing: border-box;
     margin-left: auto;
@@ -131,7 +131,7 @@ body {
     border: none;
     background-color: var(--primary-red);
     cursor: pointer;
-    width: 42px;
+    width: 36px;
     /* Chiều rộng vùng bấm icon */
     height: 100%;
     /* Nút cao bằng thanh search để căn giữa tự động */

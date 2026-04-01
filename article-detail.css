@@ -15,7 +15,7 @@
 
 /* Article Header */
 .article-header {
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 4rem;
     background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
     border-bottom: 2px solid var(--primary-red);
 }
@@ -49,7 +49,7 @@
 
 .article-meta {
     display: flex;
-    gap: 2rem;
+    gap: 3.5rem;
     flex-wrap: wrap;
     font-size: 0.9rem;
 }
@@ -67,17 +67,54 @@
 
 /* Featured Image */
 .article-featured-image {
-    width: 100%;
+    width: calc(100% - 8rem);
     height: 500px;
     object-fit: cover;
     display: block;
+    margin: 0 4rem 0 4rem;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 4rem 0.5rem 4rem;
+    font-size: 0.9rem;
+    background-color: white;
+}
+
+.breadcrumb a {
+    color: var(--primary-brown);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--primary-gold);
+    padding-bottom: 0.15rem;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-red);
+    border-bottom-style: solid;
+}
+
+.breadcrumb a:active {
+    color: var(--primary-red);
+}
+
+.breadcrumb span {
+    color: var(--text-light);
+}
+
+.breadcrumb span.current {
+    color: var(--primary-red);
+    font-weight: 600;
 }
 
 /* Table of Contents */
 .table-of-contents {
     background-color: #f9f9f9;
     border-left: 4px solid var(--primary-red);
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 2rem;
     margin: 2rem;
     border-radius: 6px;
 }
