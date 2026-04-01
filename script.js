@@ -224,4 +224,41 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollTopBtn.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Product cards: image and title open detail page link.
+    document.querySelectorAll('.product-card').forEach(function (card) {
+        const detailLink = card.querySelector('.read-more');
+        if (!detailLink) {
+            return;
+        }
+
+        const href = detailLink.getAttribute('href');
+        if (!href) {
+            return;
+        }
+
+        const image = card.querySelector('.product-image');
+        const title = card.querySelector('h3');
+
+        if (image) {
+            image.style.cursor = 'pointer';
+            image.addEventListener('click', function () {
+                window.location.href = href;
+            });
+        }
+
+        if (title) {
+            title.style.cursor = 'pointer';
+            title.tabIndex = 0;
+            title.addEventListener('click', function () {
+                window.location.href = href;
+            });
+            title.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.location.href = href;
+                }
+            });
+        }
+    });
 });

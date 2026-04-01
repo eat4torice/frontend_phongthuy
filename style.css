@@ -325,7 +325,8 @@ body {
     display: block;
     color: var(--text-dark);
     text-decoration: none;
-    padding: 0.78rem 1.15rem;
+    padding: 0.8rem 1.15rem;
+    line-height: 1.45;
     transition: all 0.3s;
 }
 
@@ -334,16 +335,21 @@ body {
 }
 
 .dropdown-menu a::before {
-    content: "☾";
-    color: #b79563;
-    margin-right: 0.5rem;
-    font-size: 0.78rem;
+    content: "";
+    display: inline-block;
+    width: 0.56rem;
+    height: 0.56rem;
+    margin-right: 0.58rem;
+    background-color: #c89b3c;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 3a4.5 4.5 0 0 0 0 9a4.5 4.5 0 0 1 0 9'/%3E%3Ccircle cx='12' cy='7.5' r='1'/%3E%3Ccircle cx='12' cy='16.5' r='1'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 3a4.5 4.5 0 0 0 0 9a4.5 4.5 0 0 1 0 9'/%3E%3Ccircle cx='12' cy='7.5' r='1'/%3E%3Ccircle cx='12' cy='16.5' r='1'/%3E%3C/svg%3E") center / contain no-repeat;
+    transform: translateY(-1px);
 }
 
 .dropdown-menu a:hover {
     background-color: var(--bg-light);
     color: var(--primary-red);
-    padding-left: 1.35rem;
+    padding-left: 1.15rem;
 }
 
 /* Main Content */
@@ -461,6 +467,21 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.group-title-link {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 6px;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.group-title-link:hover {
+    color: #a41734;
+    transform: translateX(2px);
 }
 
 .group-title i {
@@ -650,7 +671,7 @@ footer {
 
 .footer-section a:hover {
     color: #d8a94a;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .footer-section:nth-child(2) p:last-child a {
@@ -813,6 +834,34 @@ footer {
     background-color: #fff4df;
     color: #8b2d00;
     padding-left: 1rem;
+}
+
+.tags-menu .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    padding: 0.78rem 0.85rem 0.9rem;
+}
+
+.tag-chip {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ebd8b7;
+    background-color: #fff8eb;
+    color: #7a4417;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.42rem 0.68rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.tag-chip:hover {
+    background-color: #ffe6b1;
+    border-color: #d8a94a;
+    color: #8b2d00;
 }
 
 .scroll-to-top {
@@ -1307,7 +1356,11 @@ button:hover {
 
     .dropdown-menu a {
         color: rgba(255, 255, 255, 0.94);
-        padding: 0.68rem 1rem 0.68rem 2.2rem;
+        padding: 0.76rem 1rem 0.76rem 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.62rem;
+        font-size: 1.03rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -1315,14 +1368,27 @@ button:hover {
         color: var(--primary-gold);
     }
 
+    .dropdown-menu a::before {
+        width: 0.6rem;
+        height: 0.6rem;
+        margin-right: 0;
+        background-color: #d9b75c;
+        flex-shrink: 0;
+        transform: none;
+    }
+
     .dropdown-menu a:hover {
         background-color: rgba(255, 255, 255, 0.1);
         color: #fff;
-        padding-left: 2.2rem;
+        padding-left: 1.2rem;
     }
 }
 
 @media (max-width: 768px) {
+    .main-container {
+        padding: 0.65rem 0.55rem 1rem;
+    }
+
     .header-content {
         flex-direction: column;
         align-items: stretch;
@@ -1360,7 +1426,7 @@ button:hover {
     .content-wrapper {
         grid-template-columns: 1fr;
         display: grid;
-        gap: 1rem;
+        gap: 0.65rem;
     }
 
     .content-wrapper.full-width {
@@ -1378,8 +1444,29 @@ button:hover {
 
     .product-group {
         grid-column: 1;
-        margin: 1.5rem 0;
-        padding: 1.25rem;
+        margin: 0.7rem 0;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .content-wrapper>.product-group:first-child {
+        margin-top: 0.35rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.45rem, 5vw, 1.8rem);
+        margin-bottom: 1rem;
+    }
+
+    .group-title {
+        font-size: clamp(1.35rem, 5.6vw, 1.75rem);
+        line-height: 1.25;
+        gap: 0.5rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .group-title i {
+        font-size: clamp(1.15rem, 4.6vw, 1.45rem);
     }
 
     .tool-nav {
